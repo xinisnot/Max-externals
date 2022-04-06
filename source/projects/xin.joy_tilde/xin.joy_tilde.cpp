@@ -4,79 +4,10 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
+#include "../shared/xtool.h"
 
 using namespace c74::min;
-
-template <typename T>
-class Scale
-{
-public:
-    void setXFrom(T v)
-    {
-        xFrom = v;
-    }
-
-    void setXTo(T v)
-    {
-        xTo = v;
-    }
-
-    void setYFrom(T v)
-    {
-        yFrom = v;
-    }
-
-    void setYTo(T v)
-    {
-        yTo = v;
-    }
-
-    T scaleB2U(T x)
-    {
-        return (x+1) * 0.5;
-    }
-
-    T scaleU2B(T x)
-    {
-        return x*2 - 1;
-    }
-
-    T scaleU2X(T x)
-    {
-        return x*(yTo-yFrom) + yFrom;
-    }
-
-    T scaleX2U(T x)
-    {
-        return (x-xFrom) / (xTo-xFrom);
-    }
-
-    T scaleB2X(T x)
-    {
-        return scaleU2X(scaleB2U(x), yFrom, yTo);
-    }
-
-    T scaleX2B(T x)
-    {
-        return (x-xFrom) / (xTo-xFrom) * 2 - 1;
-    }
-
-    T scaleX2Y(T x)
-    {
-        return scaleU2X(scaleX2U(x));
-    }
-
-private:
-    T xFrom;
-    T xTo;
-    T yFrom;
-    T yTo;
-};
-
-
-
-
-
+using namespace xtool::scale;
 
 class xin_joy_tilde : public object<xin_joy_tilde>, public sample_operator<1, 1>
 {
