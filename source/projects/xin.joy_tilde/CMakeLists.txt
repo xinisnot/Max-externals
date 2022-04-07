@@ -19,9 +19,6 @@ include_directories(
 
 set( SOURCE_FILES
 	${PROJECT_NAME}.cpp
-    ../shared/xtool.h
-    ../shared/xtool_scale.h
-    ../shared/xtool_constant.h
 )
 
 

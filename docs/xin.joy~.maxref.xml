@@ -22,6 +22,26 @@
 
 	<objarglist>
 
+		<objarg name='xFrom' optional='1' type='number'>
+			<digest>x From </digest>
+			<description>x From </description>
+		</objarg>
+
+		<objarg name='xTo' optional='1' type='number'>
+			<digest>x To </digest>
+			<description>x To </description>
+		</objarg>
+
+		<objarg name='yFrom' optional='1' type='number'>
+			<digest>y From </digest>
+			<description>y From </description>
+		</objarg>
+
+		<objarg name='yTo' optional='1' type='number'>
+			<digest>y To </digest>
+			<description>y To </description>
+		</objarg>
+
 	</objarglist>
 
 

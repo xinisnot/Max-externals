@@ -1,4 +1,0 @@
-#pragma once
-
-//#include "xtool_constant.h"
-#include "xtool_scale.h"
