@@ -7,7 +7,6 @@
 #include "../../xtool/include/xtool.h"
 
 using namespace c74::min;
-//using namespace xtool::scale;
 
 class xin_joy_tilde : public object<xin_joy_tilde>, public sample_operator<1, 1>
 {
@@ -63,7 +62,7 @@ public:
         {
             MIN_FUNCTION
             {
-//                scale.setXFrom(args[0]);
+                scale.setXFrom(args[0]);
                 return args;
             }
         }
@@ -76,7 +75,7 @@ public:
         {
             MIN_FUNCTION
             {
-//                scale.setXTo(args[0]);
+                scale.setXTo(args[0]);
                 return args;
             }
         }
@@ -89,7 +88,7 @@ public:
         {
             MIN_FUNCTION
             {
-//                scale.setYFrom(args[0]);
+                scale.setYFrom(args[0]);
                 return args;
             }
         }
@@ -102,19 +101,18 @@ public:
         {
             MIN_FUNCTION
             {
-//                scale.setYTo(args[0]);
+                scale.setYTo(args[0]);
                 return args;
             }
         }
     };
 
     sample operator()(sample in) {
-//        return scale.scaleX2Y(in);
-        return xtool::calc::scaleX2Y<sample>(in, xFrom, xTo, yFrom, yTo);
+        return scale.scaleX2Y(in);
     }
 
 private:
-//    Scale<number> scale;
+    xtool::Scale<number> scale;
 };
 
 MIN_EXTERNAL(xin_joy_tilde);
